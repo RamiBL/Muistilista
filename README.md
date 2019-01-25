@@ -13,4 +13,7 @@ Toiminnot:
   
   [Linkki Herokuun](https://todo-muistilista.herokuapp.com/)
   
+  [Tietokantahahmotelma](https://github.com/RamiBL/Muistilista/blob/master/documentation/dbschema.md) </br>
+  [Käyttötapaukset](https://github.com/RamiBL/Muistilista/blob/master/documentation/stories.md)
+  
   
