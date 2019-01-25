@@ -1,1 +1,1 @@
-u
+Käyttäjänä haluaisin mahdollisimman yksinkertaisen sivuston, johon lisätä muistettavia asioita ja jossa voin merkata muistettavat asiat tehdyiksi. Ehkä olisi myös kiva pystyä liittämään muistettavia asioita yhteen, esimerkiksi kaikki kouluasiat.
