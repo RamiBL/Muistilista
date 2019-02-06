@@ -29,6 +29,15 @@ class User(Base):
         return True
 
 
+    @staticmethod
+    def find_users():
+        stmt = text("SELECT username FROM Account")
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append({"name":row[0]})
+        print("RESSSSSSSSSSS: {}".format(res))
+        return response
     # @staticmethod
     # def find_users_with_no_tasks(:
     #     stmt = text("SELECT Account.id, Account.name FROM Account"

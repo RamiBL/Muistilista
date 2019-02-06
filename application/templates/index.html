@@ -2,6 +2,18 @@
 
 {% block body %}
 
+{% if users_list is defined %}
+<p>
+  Users:
+</p>
+<ul>
+  {% for user in users_list %}
+  <li>
+    {{user.name}}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
 <!-- {% if needs_tasks is defined %}
 <p>
   Users that have not been given any tasks:
