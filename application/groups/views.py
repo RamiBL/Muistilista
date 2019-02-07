@@ -22,8 +22,7 @@ def groups_create():
         return render_template("groups/new.html", form = form)
 
     t = Group(form.name.data)
-    t.done = form.done.data
-    t.account_id = current_user.id
+
 
     db.session().add(t)
     db.session().commit()
