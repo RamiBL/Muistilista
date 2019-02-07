@@ -3,7 +3,14 @@
 {% block body %}
 <form method="POST" action="{{ url_for('tasks_create') }}">
   <table>
+<!-- {% for subfield in form.myField %}
+<tr>
+    <td>{{ subfield }}</td>
+    <td>{{ subfield.label }}</td>
+</tr>
+{% endfor %} -->
     <tr>
+
 <td>
   {{ form.name.label }}
 </td>
@@ -19,6 +26,14 @@
 </td>
     </tr>
     <tr>
+<td>
+  {{ form.myField.label }}
+</td>
+<td>
+  {{ form.myField }}
+</td>
+  </tr>
+  <tr>
 <td>
   {{ form.done.label }}
 </td>
