@@ -13,8 +13,14 @@ class User(Base):
 
     tasks = db.relationship("Task", backref='account', lazy=True)
 
-    def __init__(self, name):
+    def __init__(self, name, password):
         self.name = name
+        self.username = name
+        self.password = password
+    #  UUUUUTTAAAAAA
+    # def __init__(self, username, plaintext):
+    #     self.username = username
+    #     self._password = bcrypt.generate_password_hash(plaintext, 15).decode('utf-8')
 
     def get_id(self):
         return self.id

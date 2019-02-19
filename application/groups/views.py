@@ -4,6 +4,10 @@ from application.groups.models import Group
 from application.groups.forms import GroupForm
 from flask_login import login_required, current_user
 
+@app.route("/group/<group_id>/", methods=["POST"])
+
+
+
 @app.route("/groups", methods=["GET"])
 def groups_index():
     return render_template("groups/list.html", groups = Group.query.all())

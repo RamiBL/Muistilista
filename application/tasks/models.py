@@ -6,8 +6,10 @@ class Task(Base):
     name = db.Column(db.String(144), nullable=False)
     done = db.Column(db.Boolean, nullable=False)
 
+    
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     # tasks = db.relationship("Group", backref='task', lazy=True)
+    group_id = db.Column(db.Integer, db.ForeignKey('group.id'), nullable=False)
 
     def __init__(self, name):
         self.name = name
