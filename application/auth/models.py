@@ -1,4 +1,4 @@
-from application import db
+from application import db, bcrypt
 from application.models import Base
 
 from sqlalchemy.sql import text
@@ -16,7 +16,8 @@ class User(Base):
     def __init__(self, name, password):
         self.name = name
         self.username = name
-        self.password = password
+        #self.password = password
+        self.password = bcrypt.generate_password_hash(password, 15).decode('utf-8')
     #  UUUUUTTAAAAAA
     # def __init__(self, username, plaintext):
     #     self.username = username
@@ -37,6 +38,8 @@ class User(Base):
     def roles(self):
         return ["ADMIN"]
 
+    def is_correct_password(self, password):
+        return bcrypt.check_password_hash(self.password, password)
 
     @staticmethod
     def find_users():
@@ -45,7 +48,6 @@ class User(Base):
         response = []
         for row in res:
             response.append({"name":row[0]})
-        print("RESSSSSSSSSSS: {}".format(res))
         return response
     # @staticmethod
     # def find_users_with_no_tasks(:

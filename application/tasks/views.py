@@ -31,7 +31,11 @@ def tasks_set_done(task_id):
     t = Task.query.get(task_id)
     if t.account_id != current_user.id:
         return login_manager.unauthorized()
-    t.done = True
+    if t.done == True:
+        t.done = False
+    else:
+        t.done = True
+    #t.done = True
     db.session().commit()
 
     return redirect(url_for("tasks_index"))
@@ -42,6 +46,7 @@ def tasks_create():
     form = TaskForm(request.form)
 
     if not form.validate():
+        print("NONONONONONO")
         return render_template("tasks/new.html", form = form)
 
     t = Task(form.name.data)
