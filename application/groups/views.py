@@ -6,15 +6,6 @@ from flask_login import login_required, current_user
 
 @app.route("/group/<group_id>/", methods=["POST"])
 
-@app.route("/group/delete/<group_id>/", methods=["POST"])
-# @login_required(role="ADMIN")
-def group_delete(group_id):
-    g = Group.query.get(group_id)
-
-    db.session().delete(g)
-    db.session().commit()
-
-    return redirect(url_for("tasks_index"))
 
 @app.route("/groups", methods=["GET"])
 def groups_index():
