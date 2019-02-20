@@ -8,9 +8,10 @@ class TaskForm(FlaskForm):
 
     name = StringField("Task name", [validators.Length(min=1), validators.Length(max=20)])
     done = BooleanField("Done")
-    #vari = Group.query.all()
-    #lista = [(u.id, u.name) for u in vari]
-    #myField = SelectField("Group", choices=lista)
+    groups_query = Group.query.all()
+    lista = [(u.id, u.name) for u in groups_query]
+    groups = SelectField(u'Group', choices=lista)
+    
 
     class Meta:
         csrf = False

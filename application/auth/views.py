@@ -47,8 +47,6 @@ def users_create():
 
     username = form.username.data
     if User.query.filter_by(username=username).first() is None:
-        print("BLÖÖÖÖÖÖÖÖÖÖ {}".format(username))
-        print("BLÄÄÄÄÄÄÄÄÄÄÄÄ {}".format(form.password.data))
         user = User(username, form.password.data)
     else:
         return render_template("auth/new.html", form = NewUserForm())
