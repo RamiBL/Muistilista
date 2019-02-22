@@ -3,17 +3,17 @@ from flask import redirect, render_template, request, url_for
 from application.tasks.models import Task
 from application.tasks.forms import TaskForm
 
-from application.groups.models import Group
+from application.groups.models import Groups
 from flask_login import current_user
 
 
 @app.route("/tasks", methods=["GET"])
 def tasks_index():
-    groups = Group.query.all()
+    groups = Groups.query.all()
     print("GROUPSUOUOUOUO{}".format(groups))
     print("GROUPIN     NIMET {}".format([group.name for group in groups]))
     return render_template("tasks/list.html", tasks = Task.query.all(),
-                                              groups = Group.query.all())
+                                              groups = Groups.query.all())
 
 @app.route("/tasks/new/")
 @login_required(role="ADMIN")
