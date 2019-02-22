@@ -1,9 +1,9 @@
 from application import db
 from application.models import Base
 
-class Group(Base):
+class Groups(Base):
 
-    __tablename__ = "group"
+    __tablename__ = "groups"
 
     name = db.Column(db.String(144), nullable=False)
     #task_id = db.Column(db.Integer, db.ForeignKey('task.id'), nullable=True)
