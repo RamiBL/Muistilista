@@ -18,10 +18,6 @@ class User(Base):
         self.username = name
         #self.password = password
         self.password = bcrypt.generate_password_hash(password, 15).decode('utf-8')
-    #  UUUUUTTAAAAAA
-    # def __init__(self, username, plaintext):
-    #     self.username = username
-    #     self._password = bcrypt.generate_password_hash(plaintext, 15).decode('utf-8')
 
     def get_id(self):
         return self.id
@@ -57,9 +53,7 @@ class User(Base):
     #                  " GROUP BY Account.id"
     #                  " HAVING COUNT(Task.id) = 0")
     #     res = db.engine.execute(stmt)
-    #
     #     response = []
     #     for row in res:
     #         response.append({"id":row[0], "name":row[1]})
-    #
     #     return response
