@@ -89,4 +89,7 @@ def load_user(user_id):
 try:
     db.create_all()
 except:
+    print("Creating databases did not work")
+    print("HUODIJSOIKDNIJSOKXJONSC")
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     pass

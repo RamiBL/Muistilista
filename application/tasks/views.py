@@ -52,7 +52,7 @@ def tasks_create():
     form = TaskForm(request.form)
 
     # if not form.validate():
-    #     print("NONONONONONO")
+    #     print("no validation")
     #     return render_template("tasks/new.html", form = form)
 
     print("FORMROMORMROMROMROMRORM {}".format(form))
